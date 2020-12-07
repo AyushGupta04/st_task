@@ -58,7 +58,8 @@ class CategoriesTable extends Table
 
         $data = $this->find('all')
             ->limit($limit)
-            ->offset($offset);
+            ->offset($offset)
+            ->order(['Categories.id'=>'desc']);
 
         if (!empty($data)) {
             return $data;
